@@ -29,7 +29,6 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
 
-    // Simüle edilmiş giriş işlemi (2 saniye bekleme)
     await Future.delayed(const Duration(seconds: 2));
 
     setState(() {
@@ -37,7 +36,6 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     if (mounted) {
-      // Basit validasyon (demo için)
       if (_usernameController.text.isNotEmpty &&
           _passwordController.text.isNotEmpty) {
         Navigator.pushReplacement(
@@ -71,8 +69,6 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 60),
-
-              // Logo ve başlık
               Column(
                 children: [
                   Container(
@@ -113,8 +109,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               const SizedBox(height: 48),
-
-              // Giriş formu
               Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
@@ -144,8 +138,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
 
                       const SizedBox(height: 32),
-
-                      // Kullanıcı adı alanı
                       TextFormField(
                         controller: _usernameController,
                         decoration: InputDecoration(
@@ -175,7 +167,6 @@ class _LoginPageState extends State<LoginPage> {
 
                       const SizedBox(height: 16),
 
-                      // Şifre alanı
                       TextFormField(
                         controller: _passwordController,
                         obscureText: _obscurePassword,
@@ -218,7 +209,6 @@ class _LoginPageState extends State<LoginPage> {
 
                       const SizedBox(height: 24),
 
-                      // Giriş butonu
                       SizedBox(
                         height: 48,
                         child: ElevatedButton(
@@ -258,7 +248,6 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 32),
 
-              // Demo bilgileri
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(

@@ -52,8 +52,6 @@ class _TasksPageState extends State<TasksPage> {
   ];
 
   void _scanBarcode(LogisticsTask task) {
-    // Burada normalde kamera açılacak ve barkod taranacak
-    // Şimdilik simüle ediyoruz
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -147,7 +145,6 @@ class _TasksPageState extends State<TasksPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Özet kartları
             Row(
               children: [
                 Expanded(
@@ -186,7 +183,6 @@ class _TasksPageState extends State<TasksPage> {
 
             const SizedBox(height: 16),
 
-            // Görev listesi
             Expanded(
               child: ListView.builder(
                 itemCount: _tasks.length,
@@ -258,7 +254,6 @@ class _TasksPageState extends State<TasksPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Başlık ve durum
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -278,7 +273,6 @@ class _TasksPageState extends State<TasksPage> {
 
           const SizedBox(height: 12),
 
-          // Detaylar
           Row(
             children: [
               Icon(Icons.local_shipping, size: 16, color: Colors.grey[600]),
@@ -299,7 +293,6 @@ class _TasksPageState extends State<TasksPage> {
 
           const SizedBox(height: 12),
 
-          // İlerleme çubuğu ve buton
           Row(
             children: [
               Expanded(
@@ -342,7 +335,6 @@ class _TasksPageState extends State<TasksPage> {
 
               const SizedBox(width: 16),
 
-              // Barkod tarama butonu
               if (task.status != TaskStatus.completed)
                 ElevatedButton.icon(
                   onPressed: () => _scanBarcode(task),
@@ -363,7 +355,6 @@ class _TasksPageState extends State<TasksPage> {
             ],
           ),
 
-          // Görev tipi
           const SizedBox(height: 8),
           Row(
             children: [
@@ -434,7 +425,6 @@ class _TasksPageState extends State<TasksPage> {
   }
 }
 
-// Model sınıfları
 class LogisticsTask {
   final int id;
   final String vehiclePlate;
